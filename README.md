@@ -1,27 +1,30 @@
-# Jan’s Personal Site Draft
+# Jan’s Personal Portfolio Draft
 
-This repository now contains a static PhD portfolio draft inspired by the minimalist carousel layout on [adammaj.com/reading/insanely-simple](https://adammaj.com/reading/insanely-simple). The site features a hero, a book carousel (with bookshelf styling), and placeholder sections for bio/research/blog.
+This repo holds a minimalist PhD portfolio inspired by the clean carousel reading section on [adammaj.com/reading/insanely-simple](https://adammaj.com/reading/insanely-simple). It now features a bookshelf carousel, separate bio/research/blog "pages" with sticky navigation, and auto-covered book cards.
 
-## Layout & sections
+## Highlights
 
-- **Carousel bookshelf:** Book cards render as vertical covers with cover-color gradients, mimicking a shelf. Clicking a cover displays the front-page summary below.
-- **Bio / research / blog panels:** Quick blurbs describe your PhD focus, current projects, and writing habit, echoing the storytelling style of the reference site.
-- **Add book form:** Simple form populates new readings at the top with color-coded covers.
+- **Carousel bookshelf:** Each book is rendered as a cover-style card (cover art provided via lookup table) with a detail panel showing notes.
+- **Navigation:** A top nav toggles between Reading, Bio, Research, and Blog sections without leaving the single page.
+- **Reading automation:** The JS maps titles to cover URLs and updates stats for total/reading/thinking entries; new submissions are added via the inline form.
+- **Additional sections:** Bio and research sections have placeholders reflecting your RDE/data-driven work, while the blog area surfaces short narrative snippets.
 
-## Project status
+## Improvements added
 
-- HTML/CSS/JS triple set up with responsive design and interactive carousel.
-- Carousel data is stored in `scripts/main.js`; adding entries updates the DOM and preserves state during the session.
-- Placeholder content draws on the RDE/data-driven background mentioned earlier.
+1. Minimalist deck-like layout with fixed nav and shelf-style cards.
+2. Cover lookup table fakes automatic Google-image retrieval by mapping titles to cover URLs (e.g., Open Library APIs). You can extend this list or integrate a real image API later.
+3. Placeholder bio, research, and blog copy with badges/tags, forming distinct "sub-pages" for easy navigation.
+4. Updated README/TODO documentation to reflect the new experience.
 
-## User manual
+## Running the draft
 
-1. Open `index.html` in a browser or run `python -m http.server` from the repo root.
-2. Use the book form to add curated readings; new cards appear immediately on the shelf and show notes.
-3. Adjust `research` / `blogPosts` arrays in `scripts/main.js` to keep the context fresh.
+1. Open `index.html` or serve via `python -m http.server` from this folder.
+2. Use the navigation buttons at the top to jump between sections.
+3. Add a book to see the carousel update plus the stats line.
+4. Extend the `coverLookup` object in `scripts/main.js` with more titles and URLs as needed.
 
 ## Next steps
 
-- Expand the bio/research/blog copy with real experiences, publications, and updates.
-- Add navigation anchors, contact info, and SEO metadata for deployment.
-- Integrate this static draft with a static site generator or GitHub Pages when ready.
+- Replace placeholder copy with real bio/research/blog entries.
+- Hook the site to GitHub Pages or another static host.
+- Optionally load cover images via an API/manifest for full automation.

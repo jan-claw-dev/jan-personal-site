@@ -7,70 +7,68 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero__content">
-      <p class="hero__eyebrow">PhD student · RDE · storytelling</p>
-      <h1>Jan’s reading shelf</h1>
-      <p class="hero__lead">A constantly updated shelf of books, reflections, and research musings inspired by the minimalist carousel on Adam Maj’s page.</p>
-    </div>
-  </header>
+  <div class="page">
+    <header class="hero">
+      <div class="logo">Jan</div>
+      <nav class="nav" id="main-nav">
+        <button data-target="reading" class="nav__link active">Reading</button>
+        <button data-target="bio" class="nav__link">Bio</button>
+        <button data-target="research" class="nav__link">Research</button>
+        <button data-target="blog" class="nav__link">Blog</button>
+      </nav>
+      <p class="hero__lead">Minimalist carousel shelf, curated stories, and quick-access notes for my PhD path.</p>
+    </header>
 
-  <main class="container">
-    <section class="carousel-section">
-      <h2>Current bookshelf</h2>
-      <div class="bookshelf" aria-label="Featured books carousel">
-        <div class="spine"></div>
-        <div class="book-carousel" id="book-carousel"></div>
-      </div>
-      <div class="book-detail" id="book-detail"></div>
-    </section>
+    <main class="container">
+      <section class="section" id="reading">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Current shelf</p>
+            <h1>Reading carousel</h1>
+          </div>
+          <div class="stats" id="reading-stats"></div>
+        </div>
+        <div class="bookshelf">
+          <div class="book-carousel" id="book-carousel"></div>
+        </div>
+        <div class="book-detail" id="book-detail"></div>
+        <div class="form-card">
+          <form id="book-form">
+            <input name="title" placeholder="Title" required>
+            <input name="author" placeholder="Author" required>
+            <input name="year" type="number" min="1900" max="2099" value="2026" required>
+            <select name="status">
+              <option>Thinking about</option>
+              <option>Reading</option>
+              <option>Finished</option>
+            </select>
+            <textarea name="notes" placeholder="Notes" rows="3" required></textarea>
+            <button type="submit">Add book</button>
+          </form>
+        </div>
+      </section>
 
-    <section class="sections">
-      <article class="panel">
-        <h3>Bio</h3>
-        <p>Jan studies rotating detonation engines through data fusion, always pairing clean analog notes with ML experiments.</p>
-      </article>
-      <article class="panel">
-        <h3>Research</h3>
-        <p>Focusing on latent aligners, HF residual modeling, and interpretability in high-speed combustion.</p>
-      </article>
-      <article class="panel">
-        <h3>Blog</h3>
-        <p>Quick posts share lessons from experiments, reading reflections, and occasional code fragments.</p>
-      </article>
-    </section>
+      <section class="section" id="bio" hidden>
+        <h2>Bio</h2>
+        <p>Jan is a PhD student working on rotating detonation engines and data-fusion frameworks. A lover of analog notes and quiet editorial moments, Jan writes to translate chaotic experiments into stories.</p>
+        <div class="card-row">
+          <article class="micro-card"><strong>Location</strong><span>USA / PST</span></article>
+          <article class="micro-card"><strong>Focus</strong><span>Latent alignment + HF modeling</span></article>
+          <article class="micro-card"><strong>Fun</strong><span>Library walks, playlists</span></article>
+        </div>
+      </section>
 
-    <section class="form-card" aria-label="add book">
-      <h3>Add to the shelf</h3>
-      <form id="book-form">
-        <label>
-          Title
-          <input type="text" name="title" required placeholder="Insanely Simple">
-        </label>
-        <label>
-          Author
-          <input type="text" name="author" required placeholder="Ken Segall">
-        </label>
-        <label>
-          Notes
-          <textarea name="notes" rows="3" required placeholder="Why this matters"></textarea>
-        </label>
-        <label>
-          Color
-          <input type="color" name="color" value="#3b82f6">
-        </label>
-        <label>
-          Year
-          <input type="number" name="year" min="1900" max="2099" required value="2026">
-        </label>
-        <button type="submit">Add book</button>
-      </form>
-    </section>
-  </main>
+      <section class="section" id="research" hidden>
+        <h2>Research</h2>
+        <div class="research-grid" id="research-grid"></div>
+      </section>
 
-  <footer class="footer">
-    <p>© Jan | PhD personal site draft.</p>
-  </footer>
+      <section class="section" id="blog" hidden>
+        <h2>Blog & notes</h2>
+        <div class="blog-grid" id="blog-grid"></div>
+      </section>
+    </main>
+  </div>
 
   <script src="scripts/main.js"></script>
 </body>
