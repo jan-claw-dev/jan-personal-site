@@ -15,6 +15,9 @@
         <button data-target="bio" class="nav__link">Bio</button>
         <button data-target="research" class="nav__link">Research</button>
         <button data-target="blog" class="nav__link">Blog</button>
+        <button data-target="publications" class="nav__link">Publications</button>
+        <button data-target="cv" class="nav__link">CV</button>
+        <button data-target="contact" class="nav__link">Contact</button>
       </nav>
       <p class="sidebar__tag">PhD · RDE · minimalist notes</p>
     </aside>
@@ -22,7 +25,7 @@
     <main class="content">
       <header class="hero">
         <h1>Jan’s reading shelf</h1>
-        <p class="hero__lead">Minimalist reading reflections + placeholder research/blog sections.</p>
+        <p class="hero__lead">Brutalist portfolio combining book reflections, research snapshots, and a lightweight academic CV in one scroll.</p>
       </header>
 
       <section class="section" id="reading">
@@ -55,21 +58,48 @@
 
       <section class="section" id="bio" hidden>
         <h2>Bio</h2>
-        <p>Jan studies rotating detonation engines and data fusion, pairing concise analog notes with open ML experiments.</p>
+        <p>Jan studies rotating detonation engines through data fusion, pairing analog notebooks with open-source ML experiments.</p>
         <div class="card-row">
           <article class="micro-card"><strong>Location</strong><span>Pacific Time</span></article>
-          <article class="micro-card"><strong>Focus</strong><span>Latent aligners + HF modeling</span></article>
+          <article class="micro-card"><strong>Focus</strong><span>Latent alignment · HF modelling</span></article>
+          <article class="micro-card"><strong>Why it matters</strong><span>Translation of experiments into stories that fit a thesis narrative.</span></article>
         </div>
       </section>
 
       <section class="section" id="research" hidden>
         <h2>Research</h2>
+        <p class="section-subhead">Each project lists whether it is ongoing or complete—mirroring the transparency seen on the award-winning academic sites.</p>
         <div class="research-grid" id="research-grid"></div>
       </section>
 
       <section class="section" id="blog" hidden>
         <h2>Blog & notes</h2>
+        <p class="section-subhead">Short stories about lab days, field observations, and how theory meets day-to-day experimentation.</p>
         <div class="blog-grid" id="blog-grid"></div>
+      </section>
+
+      <section class="section" id="publications" hidden>
+        <h2>Publications</h2>
+        <p class="section-subhead">Recent outputs and drafts, including status markers so visitors know what is published vs. in review.</p>
+        <div class="publications-grid" id="publications-grid"></div>
+      </section>
+
+      <section class="section" id="cv" hidden>
+        <h2>CV snapshot</h2>
+        <p class="section-subhead">A compact timeline of academic milestones.</p>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="section" id="contact" hidden>
+        <h2>Contact</h2>
+        <div class="contact-card">
+          <p>Interested in collaborations, talks, or data-storytelling critiques? Drop a line.</p>
+          <a href="mailto:jan@example.com">jan@example.com</a>
+          <div class="contact-details">
+            <span>Available for remote advising, lab visits, and conference chats.</span>
+            <span>Twitter: @jan-rde (placeholder)</span>
+          </div>
+        </div>
       </section>
     </main>
   </div>

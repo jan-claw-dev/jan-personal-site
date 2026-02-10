@@ -17,7 +17,7 @@ const entries = [
 
 const research = [
   { title: 'Latent alignment for RDEs', summary: 'Building interpretable low/high fidelity fusion.', status: 'In progress' },
-  { title: 'Brutalist data storytelling', summary: 'Minimalistic dashboards for lab notes.', status: 'Planning' }
+  { title: 'Brutalist data storytelling', summary: 'Minimal dashboards that explain lab notes and prototypes.', status: 'Planning' }
 ];
 
 const blog = [
@@ -25,10 +25,18 @@ const blog = [
   { title: 'Gating HF corrections', excerpt: 'Frequency-aware gates help me trust the residuals.', tags: ['model', 'DA-SHRED'] }
 ];
 
-function carbonateTitle(title) {
-  const lower = title.toLowerCase().replace(/[^a-z]+/g, '-');
-  return `book-${lower}`;
-}
+const publications = [
+  { title: 'Latent frequency gates for rotating detonation control', venue: 'J. Combustion & Fluids (preprint)', year: 2025, status: 'In review' },
+  { title: 'Narrative notes for data-driven experimentation', venue: 'Science Communication Quarterly', year: 2024, status: 'Published' },
+  { title: 'SINDy-inspired PDE discovery in RDEs', venue: 'Chaos & Complexity Symposium', year: 2023, status: 'Conference' }
+];
+
+const timeline = [
+  { period: '2023 — present', title: 'PhD Candidate', organization: 'RDE Lab, Somewhere University', description: 'Latent aligners, HF residual modeling, and interpretation workstreams.' },
+  { period: '2021 — 2023', title: 'Research Engineer', organization: 'Combustion Workshop', description: 'Co-led data fusion pipelines and taught story-driven lab notes.' }
+];
+
+let activeCard = null;
 
 function renderBooks() {
   bookCarousel.innerHTML = '';
@@ -36,7 +44,7 @@ function renderBooks() {
     const card = document.createElement('div');
     card.className = 'book-card';
     card.dataset.index = index;
-    const cover = coverLookup[entry.title] || `https://covers.openlibrary.org/b/olid/${entry.title}L.jpg?default=false`;
+    const cover = coverLookup[entry.title] || `https://covers.openlibrary.org/b/olid/${entry.title.replace(/\s+/g, '')}-L.jpg`;
     card.style.backgroundImage = `linear-gradient(180deg, rgba(3,3,5,0), rgba(3,3,5,0.85)), url(${cover})`;
     card.innerHTML = `<div class="book-title">${entry.title}</div><div class="book-author">${entry.author}</div>`;
     card.addEventListener('click', () => selectBook(entry, card));
@@ -95,7 +103,36 @@ function renderBlog() {
   });
 }
 
-let activeCard = null;
+function renderPublications() {
+  const grid = document.getElementById('publications-grid');
+  grid.innerHTML = '';
+  publications.forEach(pub => {
+    const card = document.createElement('article');
+    card.className = 'publication-card';
+    card.innerHTML = `
+      <h3>${pub.title}</h3>
+      <p>${pub.venue}</p>
+      <div class="tag">${pub.status.toUpperCase()} · ${pub.year}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderTimeline() {
+  const container = document.getElementById('timeline');
+  container.innerHTML = '';
+  timeline.forEach(event => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item';
+    item.innerHTML = `
+      <strong>${event.period}</strong>
+      <span>${event.title} · ${event.organization}</span>
+      <p>${event.description}</p>
+    `;
+    container.appendChild(item);
+  });
+}
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   const values = new FormData(form);
@@ -107,7 +144,7 @@ form.addEventListener('submit', e => {
     status: values.get('status')
   };
   entries.unshift(entry);
-  const coverURL = `https://covers.openlibrary.org/b/olid/${entry.title.replace(/\s+/g,'')}-L.jpg`;
+  const coverURL = `https://covers.openlibrary.org/b/olid/${entry.title.replace(/\s+/g, '')}-L.jpg`;
   coverLookup[entry.title] = coverURL;
   renderBooks();
   form.reset();
@@ -123,3 +160,5 @@ navButtons.forEach(btn => btn.addEventListener('click', () => {
 renderBooks();
 renderResearch();
 renderBlog();
+renderPublications();
+renderTimeline();

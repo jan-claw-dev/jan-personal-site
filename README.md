@@ -1,24 +1,31 @@
 # Jan’s Personal Portfolio Draft
 
-This repo now hosts a brutalist-inspired PhD portfolio with a shelf-like reading carousel (inspired by [Adam Maj’s site](https://adammaj.com/reading/insanely-simple)), sections for bio/research/blog, and an automated cover lookup via Open Library.
+This repo now hosts a brutalist-inspired academic portfolio with a left-hand sidebar, Open Library-powered cover art, and discrete sections for Bio, Research, Blog, Publications, CV, and Contact.
 
-## Latest improvements
+## Latest improvements inspired by top academic sites
 
-- Rebuilt the vertical navigation onto a left sidebar, with the active section underlined (no highlight colors, per request) to keep the layout stark and modern.
-- Added placeholder bio/research/blog sub-pages accessible via the nav, each with small panels/tags.
-- Updated the carousel styling to emphasize covers, align with the brutalist aesthetic, and show a detail pane for the current book.
-- `scripts/main.js` now maps titles to real Open Library cover URLs (with fallbacks) and automatically fetches them when a new entry is added.
-- Documented usage + next steps in the README/TODO.
+1. **Sidebar navigation + underline focus** — inspired by award-winning sites that make switching between research, bio, and storytelling effortless; the selected section is underlined rather than highlighted to preserve the monochrome palette.
+2. **Rich story + data sections** — the research section mirrors contest winners by calling out ongoing vs. planning work, while the blog and publications area emphasize storytelling, status, and clarity.
+3. **CV timeline + contact card** — like the most memorable academic CVs, there’s a compressed timeline of milestones plus a dedicated contact card so collaborators can reach out without hunting for an email.
+4. **Open Library covers** — book cards fetch real ISBN/ID covers, emulating the polished visual presentation seen on premium academic pages.
 
-## Run the draft
+## Features
 
-1. Launch `index.html` directly or run `python -m http.server` in this directory.
-2. Use the nav on the left to toggle between sections (Reading, Bio, Research, and Blog).
-3. Add a new book in the "Add book" form; it will show up in the carousel with a cover image.
-4. Update the `coverLookup` mapping in `scripts/main.js` with additional ISBNs if needed.
+- **Reading carousel** with book-detail view, stats line, and autosaved cover art from Open Library (fallbacks provided if a cover is missing).
+- **Multi-section content**: Reading, Bio, Research, Blog, Publications, CV, and Contact are toggled through the sidebar without reloading.
+- **Publications grid** shows status badges and venues for each entry, echoing the transparency from contest-winning websites.
+- **CV timeline + contact details** keep the career snapshot visible without cluttering the hero.
+- **Minimalist brutalist styling** keeps the experience stark and modern, matching your home aesthetic.
 
-## TODO
+## Running the draft
 
-- Continue refining copy for each section as you polish your CV/publications.
-- Consider tying the carousel to your actual RSS/blog feed for the blog section.
-- Deploy to GitHub Pages or a static host when you’re ready to share.
+1. Open `index.html` in a browser or serve via `python -m http.server` in the repo root.
+2. Use the sidebar to switch between sections; only one section is visible at a time.
+3. Add new books to the carousel via the form; they appear at the top with a cover pulled from Open Library when available.
+4. Update the `research`, `blog`, `publications`, and `timeline` arrays in `scripts/main.js` as you publish new work.
+
+## Next steps
+
+- Replace placeholder copy with real bio, research, and blog posts.
+- Sync publications and CV entries with your actual CV or ORCID feed.
+- Deploy to GitHub Pages or another static host when ready to share.
