@@ -1,30 +1,24 @@
 # Jan’s Personal Portfolio Draft
 
-This repo holds a minimalist PhD portfolio inspired by the clean carousel reading section on [adammaj.com/reading/insanely-simple](https://adammaj.com/reading/insanely-simple). It now features a bookshelf carousel, separate bio/research/blog "pages" with sticky navigation, and auto-covered book cards.
+This repo now hosts a brutalist-inspired PhD portfolio with a shelf-like reading carousel (inspired by [Adam Maj’s site](https://adammaj.com/reading/insanely-simple)), sections for bio/research/blog, and an automated cover lookup via Open Library.
 
-## Highlights
+## Latest improvements
 
-- **Carousel bookshelf:** Each book is rendered as a cover-style card (cover art provided via lookup table) with a detail panel showing notes.
-- **Navigation:** A top nav toggles between Reading, Bio, Research, and Blog sections without leaving the single page.
-- **Reading automation:** The JS maps titles to cover URLs and updates stats for total/reading/thinking entries; new submissions are added via the inline form.
-- **Additional sections:** Bio and research sections have placeholders reflecting your RDE/data-driven work, while the blog area surfaces short narrative snippets.
+- Rebuilt the vertical navigation onto a left sidebar, with the active section underlined (no highlight colors, per request) to keep the layout stark and modern.
+- Added placeholder bio/research/blog sub-pages accessible via the nav, each with small panels/tags.
+- Updated the carousel styling to emphasize covers, align with the brutalist aesthetic, and show a detail pane for the current book.
+- `scripts/main.js` now maps titles to real Open Library cover URLs (with fallbacks) and automatically fetches them when a new entry is added.
+- Documented usage + next steps in the README/TODO.
 
-## Improvements added
+## Run the draft
 
-1. Minimalist deck-like layout with fixed nav and shelf-style cards.
-2. Cover lookup table fakes automatic Google-image retrieval by mapping titles to cover URLs (e.g., Open Library APIs). You can extend this list or integrate a real image API later.
-3. Placeholder bio, research, and blog copy with badges/tags, forming distinct "sub-pages" for easy navigation.
-4. Updated README/TODO documentation to reflect the new experience.
+1. Launch `index.html` directly or run `python -m http.server` in this directory.
+2. Use the nav on the left to toggle between sections (Reading, Bio, Research, and Blog).
+3. Add a new book in the "Add book" form; it will show up in the carousel with a cover image.
+4. Update the `coverLookup` mapping in `scripts/main.js` with additional ISBNs if needed.
 
-## Running the draft
+## TODO
 
-1. Open `index.html` or serve via `python -m http.server` from this folder.
-2. Use the navigation buttons at the top to jump between sections.
-3. Add a book to see the carousel update plus the stats line.
-4. Extend the `coverLookup` object in `scripts/main.js` with more titles and URLs as needed.
-
-## Next steps
-
-- Replace placeholder copy with real bio/research/blog entries.
-- Hook the site to GitHub Pages or another static host.
-- Optionally load cover images via an API/manifest for full automation.
+- Continue refining copy for each section as you polish your CV/publications.
+- Consider tying the carousel to your actual RSS/blog feed for the blog section.
+- Deploy to GitHub Pages or a static host when you’re ready to share.

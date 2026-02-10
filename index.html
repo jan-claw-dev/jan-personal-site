@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="page">
-    <header class="hero">
+    <aside class="sidebar" id="sidebar">
       <div class="logo">Jan</div>
       <nav class="nav" id="main-nav">
         <button data-target="reading" class="nav__link active">Reading</button>
@@ -16,15 +16,20 @@
         <button data-target="research" class="nav__link">Research</button>
         <button data-target="blog" class="nav__link">Blog</button>
       </nav>
-      <p class="hero__lead">Minimalist carousel shelf, curated stories, and quick-access notes for my PhD path.</p>
-    </header>
+      <p class="sidebar__tag">PhD · RDE · minimalist notes</p>
+    </aside>
 
-    <main class="container">
+    <main class="content">
+      <header class="hero">
+        <h1>Jan’s reading shelf</h1>
+        <p class="hero__lead">Minimalist reading reflections + placeholder research/blog sections.</p>
+      </header>
+
       <section class="section" id="reading">
         <div class="section-header">
           <div>
             <p class="eyebrow">Current shelf</p>
-            <h1>Reading carousel</h1>
+            <h2>Reading carousel</h2>
           </div>
           <div class="stats" id="reading-stats"></div>
         </div>
@@ -50,11 +55,10 @@
 
       <section class="section" id="bio" hidden>
         <h2>Bio</h2>
-        <p>Jan is a PhD student working on rotating detonation engines and data-fusion frameworks. A lover of analog notes and quiet editorial moments, Jan writes to translate chaotic experiments into stories.</p>
+        <p>Jan studies rotating detonation engines and data fusion, pairing concise analog notes with open ML experiments.</p>
         <div class="card-row">
-          <article class="micro-card"><strong>Location</strong><span>USA / PST</span></article>
-          <article class="micro-card"><strong>Focus</strong><span>Latent alignment + HF modeling</span></article>
-          <article class="micro-card"><strong>Fun</strong><span>Library walks, playlists</span></article>
+          <article class="micro-card"><strong>Location</strong><span>Pacific Time</span></article>
+          <article class="micro-card"><strong>Focus</strong><span>Latent aligners + HF modeling</span></article>
         </div>
       </section>
 
