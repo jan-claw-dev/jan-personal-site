@@ -1,34 +1,27 @@
-# Personal Website Draft
+# Jan’s Personal Site Draft
 
-This repo contains a small static site sketch for Jan’s PhD personal page, inspired by the minimalist reading section on [adammaj.com/reading/insanely-simple](https://adammaj.com/reading/insanely-simple). It offers a hero intro, a grid of short book reflections, and a straightforward form for adding new entries.
+This repository now contains a static PhD portfolio draft inspired by the minimalist carousel layout on [adammaj.com/reading/insanely-simple](https://adammaj.com/reading/insanely-simple). The site features a hero, a book carousel (with bookshelf styling), and placeholder sections for bio/research/blog.
 
-## Status & progress
+## Layout & sections
 
-1. **Scaffold & layout (done)** — created the project directory, HTML layout with hero + cards, and a placeholder form. Updated TODO.md to track steps.
-2. **Styling & responsive grid (done)** — wrote `styles.css` to mimic the clean, card-heavy look with bold typography and dark gradients.
-3. **Dynamic reading list (done)** — `scripts/main.js` renders reading cards and lets Jan add entries via the inline form.
-4. **Documentation (in progress)** — this README covers progress and user instructions; further iterations can detail SEO, deployment, or additional sections (bio, publications).
+- **Carousel bookshelf:** Book cards render as vertical covers with cover-color gradients, mimicking a shelf. Clicking a cover displays the front-page summary below.
+- **Bio / research / blog panels:** Quick blurbs describe your PhD focus, current projects, and writing habit, echoing the storytelling style of the reference site.
+- **Add book form:** Simple form populates new readings at the top with color-coded covers.
 
-## Features
+## Project status
 
-- Static `index.html` plus `styles.css` provide the main hero and grid.
-- `scripts/main.js` holds the reading-data array, renders cards, and handles the "Add a book" form. Newly added entries appear at the top.
-- Cards include author, year, status badge, and a short note, loosely mirroring the simplicity of Adam Maj’s layout.
-- The form collects title/author/notes/year/status, resets after submission, and keeps entries in session memory.
+- HTML/CSS/JS triple set up with responsive design and interactive carousel.
+- Carousel data is stored in `scripts/main.js`; adding entries updates the DOM and preserves state during the session.
+- Placeholder content draws on the RDE/data-driven background mentioned earlier.
 
 ## User manual
 
-1. **Viewing** – simply open `index.html` in a browser (or run `python -m http.server` inside the folder and browse to `http://localhost:8000` for a mini dev server).
-2. **Adding new readings** – fill the form at the bottom of the page. Provide the title, author, notes/impressions, publication year, and the reading status (Thinking about / Reading / Finished). Submission automatically prepends the entry to the grid.
-3. **Customizing entries** – edit the `entries` array inside `scripts/main.js` to pre-populate additional books or adjust the sample list.
-4. **Styling tweaks** – `styles.css` handles typography, cards, and the hero gradient; feel free to adapt colors or animation for the rest of the site.
+1. Open `index.html` in a browser or run `python -m http.server` from the repo root.
+2. Use the book form to add curated readings; new cards appear immediately on the shelf and show notes.
+3. Adjust `research` / `blogPosts` arrays in `scripts/main.js` to keep the context fresh.
 
 ## Next steps
 
-- Add navigation and additional sections (bio, research, contact) once the reading layout is final.
-- Integrate static assets (headshots, PDF downloads, ORCID badge) as needed.
-- Deploy via GitHub Pages or similar once the other site sections are ready.
-
-## TODO handling
-
-Follow `TODO.md` as the iterative checklist; once every box is ticked, consider deploying the site or expanding to a multi-page structure.
+- Expand the bio/research/blog copy with real experiences, publications, and updates.
+- Add navigation anchors, contact info, and SEO metadata for deployment.
+- Integrate this static draft with a static site generator or GitHub Pages when ready.

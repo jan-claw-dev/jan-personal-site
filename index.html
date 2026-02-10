@@ -3,57 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jan — Reading Notes</title>
+  <title>Jan — PhD Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
     <div class="hero__content">
-      <p class="hero__eyebrow">PhD Student || RDE & data-driven modeling</p>
-      <h1>Thoughtful Reading Notes</h1>
-      <p class="hero__lead">Inspired by Adam Maj’s minimalist reading log, this page surfaces books that shaped my thinking each semester. Add an entry in the form below and see it materialize in the grid.</p>
+      <p class="hero__eyebrow">PhD student · RDE · storytelling</p>
+      <h1>Jan’s reading shelf</h1>
+      <p class="hero__lead">A constantly updated shelf of books, reflections, and research musings inspired by the minimalist carousel on Adam Maj’s page.</p>
     </div>
   </header>
 
   <main class="container">
-    <section class="reading-intro">
-      <h2>Book highlights</h2>
-      <p>Click on an entry to expand the quick notes. Each card contains a short summary, why the book matters to the thesis path, and whether it's currently in-progress.</p>
+    <section class="carousel-section">
+      <h2>Current bookshelf</h2>
+      <div class="bookshelf" aria-label="Featured books carousel">
+        <div class="spine"></div>
+        <div class="book-carousel" id="book-carousel"></div>
+      </div>
+      <div class="book-detail" id="book-detail"></div>
     </section>
 
-    <section class="reading-grid" id="reading-grid"></section>
+    <section class="sections">
+      <article class="panel">
+        <h3>Bio</h3>
+        <p>Jan studies rotating detonation engines through data fusion, always pairing clean analog notes with ML experiments.</p>
+      </article>
+      <article class="panel">
+        <h3>Research</h3>
+        <p>Focusing on latent aligners, HF residual modeling, and interpretability in high-speed combustion.</p>
+      </article>
+      <article class="panel">
+        <h3>Blog</h3>
+        <p>Quick posts share lessons from experiments, reading reflections, and occasional code fragments.</p>
+      </article>
+    </section>
 
-    <section class="form-card" aria-label="add new book">
-      <h3>Add a book</h3>
+    <section class="form-card" aria-label="add book">
+      <h3>Add to the shelf</h3>
       <form id="book-form">
         <label>
           Title
-          <input type="text" name="title" required>
+          <input type="text" name="title" required placeholder="Insanely Simple">
         </label>
         <label>
           Author
-          <input type="text" name="author" required>
+          <input type="text" name="author" required placeholder="Ken Segall">
         </label>
         <label>
           Notes
-          <textarea name="notes" rows="3" required></textarea>
+          <textarea name="notes" rows="3" required placeholder="Why this matters"></textarea>
+        </label>
+        <label>
+          Color
+          <input type="color" name="color" value="#3b82f6">
         </label>
         <label>
           Year
-          <input type="number" name="year" min="1900" max="2099" required>
+          <input type="number" name="year" min="1900" max="2099" required value="2026">
         </label>
-        <label>
-          Status
-          <select name="status">
-            <option value="Thinking about">Thinking about</option>
-            <option value="Reading">Reading</option>
-            <option value="Finished">Finished</option>
-          </select>
-        </label>
-        <button type="submit">Add entry</button>
+        <button type="submit">Add book</button>
       </form>
     </section>
   </main>
+
+  <footer class="footer">
+    <p>© Jan | PhD personal site draft.</p>
+  </footer>
 
   <script src="scripts/main.js"></script>
 </body>
